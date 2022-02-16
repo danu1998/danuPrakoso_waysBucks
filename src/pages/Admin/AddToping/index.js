@@ -1,19 +1,19 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Margin from "../../components/atoms/Margin";
-import Header from "../../components/moleculs/Header";
+import Margin from "../../../components/atoms/Margin";
 import { CgAttachment } from "react-icons/cg";
-import { imgProduct1 } from "../../assets/images";
+import { imgToping1 } from "../../../assets/images";
+import HeaderAdmin from "../../../components/moleculs/HeaderCustomer";
 
-const AddProduct = () => {
+const AddToping = () => {
   return (
     <div>
-      <Header />
+      <HeaderAdmin />
       <Margin />
       <Container>
         <div className="row justify-content-between align-items-center">
           <div className="col-md-8">
-            <h3 className="mx-5">Product</h3>
+            <h3 className="mx-5">Toping</h3>
             <div className="mt-5 mx-5">
               <form>
                 <div className="mb-3">
@@ -21,7 +21,7 @@ const AddProduct = () => {
                     type="text"
                     className="form-control border-danger border-3"
                     id=""
-                    placeholder="Name Product"
+                    placeholder="Name Toping"
                   />
                 </div>
                 <div className="mb-3">
@@ -41,7 +41,7 @@ const AddProduct = () => {
                       type="file"
                     />
                     <div className="d-flex justify-content-between align-items-center">
-                      <h6 className=" mt-1 text-danger">Photo Product</h6>
+                      <h6 className=" mt-1 text-danger">Photo Toping</h6>
                       <CgAttachment />
                     </div>
                   </label>
@@ -49,7 +49,7 @@ const AddProduct = () => {
 
                 <div className="d-grid gap-2 mt-5">
                   <button type="submit" class="btn btn-danger">
-                    Add Product
+                    Add Toping
                   </button>
                 </div>
               </form>
@@ -58,7 +58,7 @@ const AddProduct = () => {
           <div className="col-md-4">
             <div>
               <img
-                src={imgProduct1}
+                src={imgToping1}
                 alt="img-product"
                 width={400}
                 height={500}
@@ -71,4 +71,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddToping;

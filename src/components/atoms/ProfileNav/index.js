@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FiUser } from "react-icons/fi";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { BiShoppingBag } from "react-icons/bi";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Nav } from "react-bootstrap";
 import { userImg } from "../../../assets/images";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../../context/userContext";
 const ProfileNav = () => {
+  const [state, dispatch] = useContext(UserContext);
+  let navigate = useNavigate();
+  const logout = () => {
+    console.log(state);
+    dispatch({
+      type: "LOGOUT",
+    });
+    navigate("/");
+  };
   return (
     <div className="d-flex justify-content-end align-items-center gap-5">
       <Link to="/cart">
@@ -15,7 +25,7 @@ const ProfileNav = () => {
             className="text-danger"
           />
           <div
-            class="rounded-pill bg-danger text-center text-white"
+            className="rounded-pill bg-danger text-center text-white"
             style={{ width: "24px", height: "24px" }}
           >
             0
@@ -38,12 +48,12 @@ const ProfileNav = () => {
               Profile
             </Link>
             <Dropdown.Divider />
-            <Link
-              to="/"
+            <Nav.Link
+              onClick={logout}
               className="d-flex justify-content-center align-items-center text-decoration-none gap-3 text-dark"
             >
               <RiLogoutBoxRLine className="text-danger" /> Logout
-            </Link>
+            </Nav.Link>
           </Dropdown.Menu>
         </Dropdown>
       </div>

@@ -1,21 +1,20 @@
 import React, { Fragment, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logoImg } from "../../../assets/images";
-import ButtonNav from "../../atoms/ButtonNav";
-
-const Header = () => {
+import AdminNav from "../../atoms/AdminNav";
+const HeaderAdmin = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg">
         <Container>
-          <Link to="/">
+          <Link to="/mainadmin">
             <img src={logoImg} alt="logo-1"></img>
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto ">
-              <ButtonNav />
+              <AdminNav />
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -24,4 +23,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderAdmin;

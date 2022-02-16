@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdPayment } from "react-icons/md";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Nav } from "react-bootstrap";
 import { userImg } from "../../../assets/images";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { productAdmin, topingAdmin } from "../../../assets/icons";
+import { UserContext } from "../../../context/userContext";
 const AdminNav = () => {
+  const [state, dispatch] = useContext(UserContext);
+  let navigate = useNavigate();
+  const logout = () => {
+    console.log(state);
+    dispatch({
+      type: "LOGOUT",
+    });
+    navigate("/");
+  };
   return (
     <div className="d-flex justify-content-end align-items-center gap-5">
       <div>
@@ -47,12 +57,12 @@ const AdminNav = () => {
               Transaction
             </Link>
             <Dropdown.Divider />
-            <Link
-              to="/"
+            <Nav.Link
+              onClick={logout}
               className="d-flex justify-content-center align-items-center text-decoration-none gap-3 text-dark fw-bold"
             >
               <RiLogoutBoxRLine className="text-danger" /> Logout
-            </Link>
+            </Nav.Link>
           </Dropdown.Menu>
         </Dropdown>
       </div>

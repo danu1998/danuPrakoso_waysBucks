@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import { imgProduct1 } from "../../assets/images";
-import Margin from "../../components/atoms/Margin";
-import Header from "../../components/moleculs/Header";
-import ProductDetail from "../../components/moleculs/ProductDetail";
+import { imgProduct1 } from "../../../assets/images";
+import Margin from "../../../components/atoms/Margin";
+import HeaderCustomer from "../../../components/moleculs/HeaderCustomer";
+import ProductDetail from "../../../components/moleculs/ProductDetail";
 
 const Detail = () => {
   const [setSum, isSetSum] = useState(0);
@@ -12,7 +12,7 @@ const Detail = () => {
   }
   return (
     <div>
-      <Header />
+      <HeaderCustomer />
       <Margin />
       <Container>
         <ProductDetail

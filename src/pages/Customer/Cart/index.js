@@ -2,9 +2,9 @@ import React from "react";
 import { FaMoneyCheck } from "react-icons/fa";
 import { Container } from "react-bootstrap";
 import { GoTrashcan } from "react-icons/go";
-import Margin from "../../components/atoms/Margin";
-import Header from "../../components/moleculs/Header";
-import { DataCart } from "./DataCart";
+import Margin from "../../../components/atoms/Margin";
+import Header from "../../../components/moleculs/Header";
+// import { DataCart } from "./DataCart";
 const Cart = () => {
   return (
     <div>
@@ -16,53 +16,48 @@ const Cart = () => {
           <div className="col-md-8">
             <h6 className="text-danger mt-3">Review Your Order</h6>
             <hr className="text-danger" style={{ height: "3px" }} />
-            {DataCart.map((data) => {
-              return (
-                <div className="row mt-3">
-                  <div className="col-md-12">
-                    <div className="row justify-content-start align-items-center">
+            return (
+            <div className="row mt-3">
+              <div className="col-md-12">
+                <div className="row justify-content-start align-items-center">
+                  <div className="col-md-2">
+                    <div>
+                      <img
+                        src=""
+                        alt="img-cart"
+                        width={100}
+                        height={100}
+                        className="img-fluid"
+                      ></img>
+                    </div>
+                  </div>
+                  <div className="col-md-10">
+                    <div className="row justify-content-between">
+                      <div className="col-md-10">
+                        <h5 className="fw-bold text-danger">name</h5>
+                      </div>
                       <div className="col-md-2">
-                        <div>
-                          <img
-                            src={data.image}
-                            alt="img-cart"
-                            width={100}
-                            height={100}
-                            className="img-fluid"
-                          ></img>
+                        <p className="text-danger">Rp 27000</p>
+                      </div>
+                    </div>
+                    <div className="row justify-content-between">
+                      <div className="col-md-11">
+                        <div className="d-flex justify-content-start align-items-center">
+                          <p className="fw-bold" style={{ color: "#974A4A" }}>
+                            Toping :
+                          </p>
+                          <p className="text-danger">Toping</p>
                         </div>
                       </div>
-                      <div className="col-md-10">
-                        <div className="row justify-content-between">
-                          <div className="col-md-10">
-                            <h5 className="fw-bold text-danger">{data.name}</h5>
-                          </div>
-                          <div className="col-md-2">
-                            <p className="text-danger">{`Rp ${data.price}`}</p>
-                          </div>
-                        </div>
-                        <div className="row justify-content-between">
-                          <div className="col-md-11">
-                            <div className="d-flex justify-content-start align-items-center">
-                              <p
-                                className="fw-bold"
-                                style={{ color: "#974A4A" }}
-                              >
-                                Toping :
-                              </p>
-                              <p className="text-danger"> {data.topingName}</p>
-                            </div>
-                          </div>
-                          <div className="col-md-1">
-                            <GoTrashcan className="text-danger" />
-                          </div>
-                        </div>
+                      <div className="col-md-1">
+                        <GoTrashcan className="text-danger" />
                       </div>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            </div>
+            );
             <hr className="text-danger" style={{ height: "3px" }} />
             <div>
               <div className="row">

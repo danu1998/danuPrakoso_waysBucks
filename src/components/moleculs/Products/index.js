@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { DataProducts } from "./DataProducts";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Products = () => {
   return (

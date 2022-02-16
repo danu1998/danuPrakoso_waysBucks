@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Margin from "../../components/atoms/Margin";
-import Header from "../../components/moleculs/Header";
+import Margin from "../../../components/atoms/Margin";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { BsXCircleFill } from "react-icons/bs";
+import HeaderAdmin from "../../../components/moleculs/HeaderAdmin";
 
 const Transaction = () => {
   return (
     <div>
-      <Header />
+      <HeaderAdmin />
       <Margin />
       <Container>
         <h3 className="fw-bold text-danger">Income Transaction</h3>
